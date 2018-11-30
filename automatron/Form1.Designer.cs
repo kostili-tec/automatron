@@ -90,7 +90,7 @@
             this.textBoxFinish.Location = new System.Drawing.Point(778, 12);
             this.textBoxFinish.Multiline = true;
             this.textBoxFinish.Name = "textBoxFinish";
-            this.textBoxFinish.Size = new System.Drawing.Size(117, 24);
+            this.textBoxFinish.Size = new System.Drawing.Size(138, 24);
             this.textBoxFinish.TabIndex = 8;
             this.textBoxFinish.Text = "</span></a></p>";
             // 
