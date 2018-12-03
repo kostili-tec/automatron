@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        string hr, html, span, span2; 
+        string hr, html, span, span2, cmbNum, textMounth; 
         private void Form1_Load(object sender, EventArgs e)
         {          
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -73,6 +73,27 @@ namespace WindowsFormsApp1
             MoveUp();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] monthArray = new string[13] { "", "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                                                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
+            
+            if (comboBox1.SelectedIndex == 0)
+            {
+                textBoxStart.Text = textBoxStart.Text.Substring(0, textBoxStart.Text.Length - 0);
+                textBoxDirect.Text = textBoxDirect.Text.Substring(0, textBoxDirect.Text.Length - 0);
+            }
+            else
+            {
+                textBoxStart.Text = textBoxStart.Text.Substring(0, textBoxStart.Text.Length - 2);
+                textBoxDirect.Text = textBoxDirect.Text.Substring(0, textBoxDirect.Text.Length - 2);
+            }
+            
+            textBoxStart.Text += comboBox1.SelectedItem.ToString();
+            textBoxDirect.Text += comboBox1.SelectedItem.ToString();
+            textBoxMounth.Text = monthArray[comboBox1.SelectedIndex];
+        }
+
         private void DownClick_Click(object sender, EventArgs e)
         {
             MoveDown();
@@ -116,7 +137,11 @@ namespace WindowsFormsApp1
             html = textBoxStart.Text;
             span = textBoxName.Text;
             span2 = textBoxFinish.Text;
-            
+            cmbNum = comboBox1.SelectedItem.ToString();
+            textMounth = textBoxMounth.Text;
+
+
+
             string path = textBoxDirect.Text;
             
             DirectoryInfo di = new DirectoryInfo(textBoxDirect.Text);
@@ -152,7 +177,7 @@ namespace WindowsFormsApp1
                        
             for (int i = 0; i < s.Length; i++)
             {
-                listBoxWrite.Items.Add(hr + html + s[i] + span + nameOfCut[i] + span2);
+                listBoxWrite.Items.Add(hr + html + "/" + s[i] +  span + nameOfCut[i] + " " + textMounth + span2);
             }
                       
             }

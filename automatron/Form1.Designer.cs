@@ -45,6 +45,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UpClick = new System.Windows.Forms.Button();
             this.DownClick = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxMounth = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             // textBoxHR
             // 
-            this.textBoxHR.Location = new System.Drawing.Point(12, 12);
+            this.textBoxHR.Location = new System.Drawing.Point(3, 12);
             this.textBoxHR.Name = "textBoxHR";
             this.textBoxHR.Size = new System.Drawing.Size(37, 20);
             this.textBoxHR.TabIndex = 6;
@@ -78,29 +80,31 @@
             // 
             // textBoxStart
             // 
-            this.textBoxStart.Location = new System.Drawing.Point(55, 12);
+            this.textBoxStart.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxStart.Location = new System.Drawing.Point(46, 12);
             this.textBoxStart.Multiline = true;
             this.textBoxStart.Name = "textBoxStart";
-            this.textBoxStart.Size = new System.Drawing.Size(335, 24);
+            this.textBoxStart.Size = new System.Drawing.Size(303, 50);
             this.textBoxStart.TabIndex = 7;
-            this.textBoxStart.Text = "<p><a href=\"http://www.smikbr.ru/2008/rgazeta/chervest/01";
+            this.textBoxStart.Text = "<p><a href=\"http://www.smikbr.ru/2012/adigps/\r\n";
             // 
             // textBoxFinish
             // 
-            this.textBoxFinish.Location = new System.Drawing.Point(778, 12);
+            this.textBoxFinish.Location = new System.Drawing.Point(761, 9);
             this.textBoxFinish.Multiline = true;
             this.textBoxFinish.Name = "textBoxFinish";
-            this.textBoxFinish.Size = new System.Drawing.Size(138, 24);
+            this.textBoxFinish.Size = new System.Drawing.Size(140, 50);
             this.textBoxFinish.TabIndex = 8;
-            this.textBoxFinish.Text = "</span></a></p>";
+            this.textBoxFinish.Text = "Месяц</span></a></p>";
             // 
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(440, 12);
+            this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(277, 20);
+            this.textBoxName.Size = new System.Drawing.Size(170, 50);
             this.textBoxName.TabIndex = 10;
-            this.textBoxName.Text = "\"><span style=\"font-size:16px\">Черекские вести - №";
+            this.textBoxName.Text = "\"><span style=\"font-size:16px\">";
             // 
             // button3
             // 
@@ -114,11 +118,11 @@
             // 
             // textBoxDirect
             // 
-            this.textBoxDirect.Location = new System.Drawing.Point(145, 42);
+            this.textBoxDirect.Location = new System.Drawing.Point(34, 68);
             this.textBoxDirect.Name = "textBoxDirect";
             this.textBoxDirect.Size = new System.Drawing.Size(231, 20);
             this.textBoxDirect.TabIndex = 12;
-            this.textBoxDirect.Text = "\\\\MISHA\\smikbr\\2010\\rgazeta\\chervest\\01";
+            this.textBoxDirect.Text = "\\\\MISHA\\smikbr\\2012\\adigps\\04";
             // 
             // listBoxFiles
             // 
@@ -139,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(396, 15);
+            this.label1.Location = new System.Drawing.Point(403, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 17;
@@ -148,7 +152,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(723, 15);
+            this.label2.Location = new System.Drawing.Point(616, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 18;
@@ -193,12 +197,44 @@
             this.DownClick.UseVisualStyleBackColor = true;
             this.DownClick.Click += new System.EventHandler(this.DownClick_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.comboBox1.Location = new System.Drawing.Point(364, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(42, 21);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBoxMounth
+            // 
+            this.textBoxMounth.Location = new System.Drawing.Point(667, 12);
+            this.textBoxMounth.Name = "textBoxMounth";
+            this.textBoxMounth.Size = new System.Drawing.Size(88, 20);
+            this.textBoxMounth.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(924, 664);
+            this.Controls.Add(this.textBoxMounth);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DownClick);
             this.Controls.Add(this.UpClick);
             this.Controls.Add(this.pictureBox1);
@@ -244,6 +280,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button UpClick;
         private System.Windows.Forms.Button DownClick;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxMounth;
     }
 }
 
